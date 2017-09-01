@@ -8,26 +8,46 @@
 
 /* Begin PBXBuildFile section */
 		400753630F418B30879D0272 /* Pods_RTHTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E46393BEF48042AD45EB2FF2 /* Pods_RTHTest.framework */; };
+		E60FDC6C1F594DE7001EB220 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60FDC6B1F594DE7001EB220 /* SplashScreen.storyboard */; };
+		E60FDC6E1F594E07001EB220 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDC6D1F594E07001EB220 /* SplashScreenViewController.swift */; };
+		E60FDC701F594FC3001EB220 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDC6F1F594FC3001EB220 /* UIColor.swift */; };
+		E60FDC721F594FD6001EB220 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDC711F594FD6001EB220 /* Global.swift */; };
+		E60FDC741F5954CE001EB220 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDC731F5954CE001EB220 /* BaseViewController.swift */; };
+		E60FDC761F595535001EB220 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDC751F595535001EB220 /* UIView.swift */; };
+		E60FDC791F596281001EB220 /* PriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDC771F596281001EB220 /* PriceTableViewCell.swift */; };
+		E60FDC7C1F59628D001EB220 /* PriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E60FDC7B1F59628D001EB220 /* PriceTableViewCell.xib */; };
+		E60FDC7E1F596780001EB220 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDC7D1F596780001EB220 /* Utils.swift */; };
 		E64C8CAA1F5945A300B326E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C8CA91F5945A300B326E4 /* AppDelegate.swift */; };
-		E64C8CAC1F5945A300B326E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C8CAB1F5945A300B326E4 /* ViewController.swift */; };
-		E64C8CAF1F5945A300B326E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E64C8CAD1F5945A300B326E4 /* Main.storyboard */; };
 		E64C8CB21F5945A400B326E4 /* RTHTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E64C8CB01F5945A300B326E4 /* RTHTest.xcdatamodeld */; };
 		E64C8CB41F5945A400B326E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E64C8CB31F5945A400B326E4 /* Assets.xcassets */; };
 		E64C8CB71F5945A400B326E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E64C8CB51F5945A400B326E4 /* LaunchScreen.storyboard */; };
+		E64C8CC71F594B5F00B326E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E64C8CC61F594B5F00B326E4 /* Main.storyboard */; };
+		E64C8CCA1F594C2200B326E4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C8CC91F594C2200B326E4 /* MainViewController.swift */; };
+		E64C8CCC1F594CC900B326E4 /* MyriadPro.otf in Resources */ = {isa = PBXBuildFile; fileRef = E64C8CCB1F594CC900B326E4 /* MyriadPro.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		465FC04E758B4AA3610BEF3D /* Pods-RTHTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RTHTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-RTHTest/Pods-RTHTest.release.xcconfig"; sourceTree = "<group>"; };
 		87BB808242C86A1AC4D448BA /* Pods-RTHTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RTHTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RTHTest/Pods-RTHTest.debug.xcconfig"; sourceTree = "<group>"; };
 		E46393BEF48042AD45EB2FF2 /* Pods_RTHTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RTHTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E60FDC6B1F594DE7001EB220 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
+		E60FDC6D1F594E07001EB220 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		E60FDC6F1F594FC3001EB220 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		E60FDC711F594FD6001EB220 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		E60FDC731F5954CE001EB220 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		E60FDC751F595535001EB220 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		E60FDC771F596281001EB220 /* PriceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceTableViewCell.swift; sourceTree = "<group>"; };
+		E60FDC7B1F59628D001EB220 /* PriceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriceTableViewCell.xib; sourceTree = "<group>"; };
+		E60FDC7D1F596780001EB220 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		E64C8CA61F5945A300B326E4 /* RTHTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTHTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E64C8CA91F5945A300B326E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E64C8CAB1F5945A300B326E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E64C8CAE1F5945A300B326E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E64C8CB11F5945A300B326E4 /* RTHTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RTHTest.xcdatamodel; sourceTree = "<group>"; };
 		E64C8CB31F5945A400B326E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E64C8CB61F5945A400B326E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E64C8CB81F5945A400B326E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E64C8CC61F594B5F00B326E4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E64C8CC91F594C2200B326E4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E64C8CCB1F594CC900B326E4 /* MyriadPro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyriadPro.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,15 +92,97 @@
 		E64C8CA81F5945A300B326E4 /* RTHTest */ = {
 			isa = PBXGroup;
 			children = (
+				E64C8CBE1F594AA700B326E4 /* Extensions */,
+				E64C8CBF1F594ADD00B326E4 /* Global */,
+				E64C8CC01F594AE900B326E4 /* Models */,
+				E64C8CC11F594AFA00B326E4 /* Network */,
+				E64C8CC21F594B0B00B326E4 /* Storyboards */,
+				E64C8CC31F594B2900B326E4 /* ViewControllers */,
+				E64C8CC41F594B3500B326E4 /* Views */,
+				E64C8CC51F594B4000B326E4 /* Xibs */,
+				E64C8CC81F594BC000B326E4 /* Resources */,
 				E64C8CA91F5945A300B326E4 /* AppDelegate.swift */,
-				E64C8CAB1F5945A300B326E4 /* ViewController.swift */,
-				E64C8CAD1F5945A300B326E4 /* Main.storyboard */,
 				E64C8CB31F5945A400B326E4 /* Assets.xcassets */,
 				E64C8CB51F5945A400B326E4 /* LaunchScreen.storyboard */,
 				E64C8CB81F5945A400B326E4 /* Info.plist */,
 				E64C8CB01F5945A300B326E4 /* RTHTest.xcdatamodeld */,
 			);
 			path = RTHTest;
+			sourceTree = "<group>";
+		};
+		E64C8CBE1F594AA700B326E4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E60FDC6F1F594FC3001EB220 /* UIColor.swift */,
+				E60FDC751F595535001EB220 /* UIView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E64C8CBF1F594ADD00B326E4 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				E60FDC711F594FD6001EB220 /* Global.swift */,
+				E60FDC7D1F596780001EB220 /* Utils.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		E64C8CC01F594AE900B326E4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E64C8CC11F594AFA00B326E4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E64C8CC21F594B0B00B326E4 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E64C8CC61F594B5F00B326E4 /* Main.storyboard */,
+				E60FDC6B1F594DE7001EB220 /* SplashScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		E64C8CC31F594B2900B326E4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E60FDC731F5954CE001EB220 /* BaseViewController.swift */,
+				E64C8CC91F594C2200B326E4 /* MainViewController.swift */,
+				E60FDC6D1F594E07001EB220 /* SplashScreenViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E64C8CC41F594B3500B326E4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E60FDC771F596281001EB220 /* PriceTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E64C8CC51F594B4000B326E4 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				E60FDC7B1F59628D001EB220 /* PriceTableViewCell.xib */,
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
+		E64C8CC81F594BC000B326E4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E64C8CCB1F594CC900B326E4 /* MyriadPro.otf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		F12F56BF161DFFE387C9908B /* Frameworks */ = {
@@ -155,7 +257,10 @@
 			files = (
 				E64C8CB71F5945A400B326E4 /* LaunchScreen.storyboard in Resources */,
 				E64C8CB41F5945A400B326E4 /* Assets.xcassets in Resources */,
-				E64C8CAF1F5945A300B326E4 /* Main.storyboard in Resources */,
+				E64C8CC71F594B5F00B326E4 /* Main.storyboard in Resources */,
+				E60FDC7C1F59628D001EB220 /* PriceTableViewCell.xib in Resources */,
+				E60FDC6C1F594DE7001EB220 /* SplashScreen.storyboard in Resources */,
+				E64C8CCC1F594CC900B326E4 /* MyriadPro.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,7 +269,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		A94628A3C9232B59B3BF4A54 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -174,8 +279,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RTHTest/Pods-RTHTest-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
 		};
 		DAF59B8AF433FAB948AD417A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -214,23 +318,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E60FDC761F595535001EB220 /* UIView.swift in Sources */,
+				E64C8CCA1F594C2200B326E4 /* MainViewController.swift in Sources */,
+				E60FDC791F596281001EB220 /* PriceTableViewCell.swift in Sources */,
 				E64C8CB21F5945A400B326E4 /* RTHTest.xcdatamodeld in Sources */,
-				E64C8CAC1F5945A300B326E4 /* ViewController.swift in Sources */,
+				E60FDC721F594FD6001EB220 /* Global.swift in Sources */,
+				E60FDC7E1F596780001EB220 /* Utils.swift in Sources */,
+				E60FDC6E1F594E07001EB220 /* SplashScreenViewController.swift in Sources */,
 				E64C8CAA1F5945A300B326E4 /* AppDelegate.swift in Sources */,
+				E60FDC741F5954CE001EB220 /* BaseViewController.swift in Sources */,
+				E60FDC701F594FC3001EB220 /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E64C8CAD1F5945A300B326E4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E64C8CAE1F5945A300B326E4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E64C8CB51F5945A400B326E4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -382,6 +485,7 @@
 				E64C8CBD1F5945A400B326E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
