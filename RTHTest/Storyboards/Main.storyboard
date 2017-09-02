@@ -87,17 +87,29 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWu-kX-sRW" userLabel="TableView">
                                 <rect key="frame" x="0.0" y="235" width="375" height="432"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bs2-bI-geB">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKJ-nq-xMq" userLabel="ContainerView">
                                         <rect key="frame" x="25" y="10" width="325" height="422"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bs2-bI-geB">
+                                                <rect key="frame" x="0.0" y="0.0" width="325" height="422"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </tableView>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </tableView>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="bs2-bI-geB" secondAttribute="trailing" id="Adg-Ig-Hc9"/>
+                                            <constraint firstAttribute="bottom" secondItem="bs2-bI-geB" secondAttribute="bottom" id="D0U-TA-zC1"/>
+                                            <constraint firstItem="bs2-bI-geB" firstAttribute="top" secondItem="oKJ-nq-xMq" secondAttribute="top" id="a6B-yU-zwb"/>
+                                            <constraint firstItem="bs2-bI-geB" firstAttribute="leading" secondItem="oKJ-nq-xMq" secondAttribute="leading" id="zwe-1d-RgN"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.86274509803921573" green="0.94901960784313721" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="bs2-bI-geB" secondAttribute="trailing" constant="25" id="9jQ-bf-RXS"/>
-                                    <constraint firstItem="bs2-bI-geB" firstAttribute="top" secondItem="VWu-kX-sRW" secondAttribute="top" constant="10" id="Cx7-I8-wGu"/>
-                                    <constraint firstAttribute="bottom" secondItem="bs2-bI-geB" secondAttribute="bottom" id="QdN-Vi-GWc"/>
-                                    <constraint firstItem="bs2-bI-geB" firstAttribute="leading" secondItem="VWu-kX-sRW" secondAttribute="leading" constant="25" id="zuL-z7-yqG"/>
+                                    <constraint firstItem="oKJ-nq-xMq" firstAttribute="top" secondItem="VWu-kX-sRW" secondAttribute="top" constant="10" id="3u0-G0-f9y"/>
+                                    <constraint firstAttribute="bottom" secondItem="oKJ-nq-xMq" secondAttribute="bottom" id="81x-84-KvQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="oKJ-nq-xMq" secondAttribute="trailing" constant="25" id="FWP-6X-0qb"/>
+                                    <constraint firstItem="oKJ-nq-xMq" firstAttribute="leading" secondItem="VWu-kX-sRW" secondAttribute="leading" constant="25" id="zhl-4D-O95"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -122,6 +134,7 @@
                         <barButtonItem key="leftBarButtonItem" image="info_icon" id="dzf-S7-5hb"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="containerView" destination="oKJ-nq-xMq" id="y7w-dj-AEf"/>
                         <outlet property="dateLabel" destination="Efc-sp-ymP" id="oTE-Qp-hMV"/>
                         <outlet property="dayLabel" destination="WhZ-2W-IbX" id="A54-tW-d52"/>
                         <outlet property="tableView" destination="bs2-bI-geB" id="NS2-eN-OSj"/>

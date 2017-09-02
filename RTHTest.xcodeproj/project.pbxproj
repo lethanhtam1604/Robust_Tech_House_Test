@@ -17,6 +17,10 @@
 		E60FDC791F596281001EB220 /* PriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDC771F596281001EB220 /* PriceTableViewCell.swift */; };
 		E60FDC7C1F59628D001EB220 /* PriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E60FDC7B1F59628D001EB220 /* PriceTableViewCell.xib */; };
 		E60FDC7E1F596780001EB220 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDC7D1F596780001EB220 /* Utils.swift */; };
+		E60FDC801F5A712F001EB220 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDC7F1F5A712F001EB220 /* Router.swift */; };
+		E60FDC821F5A870F001EB220 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDC811F5A870F001EB220 /* APIHelper.swift */; };
+		E60FDC841F5A8732001EB220 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDC831F5A8732001EB220 /* Price.swift */; };
+		E60FDC861F5A8DE2001EB220 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDC851F5A8DE2001EB220 /* Response.swift */; };
 		E64C8CAA1F5945A300B326E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C8CA91F5945A300B326E4 /* AppDelegate.swift */; };
 		E64C8CB21F5945A400B326E4 /* RTHTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E64C8CB01F5945A300B326E4 /* RTHTest.xcdatamodeld */; };
 		E64C8CB41F5945A400B326E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E64C8CB31F5945A400B326E4 /* Assets.xcassets */; };
@@ -39,6 +43,10 @@
 		E60FDC771F596281001EB220 /* PriceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceTableViewCell.swift; sourceTree = "<group>"; };
 		E60FDC7B1F59628D001EB220 /* PriceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriceTableViewCell.xib; sourceTree = "<group>"; };
 		E60FDC7D1F596780001EB220 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		E60FDC7F1F5A712F001EB220 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		E60FDC811F5A870F001EB220 /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
+		E60FDC831F5A8732001EB220 /* Price.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		E60FDC851F5A8DE2001EB220 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		E64C8CA61F5945A300B326E4 /* RTHTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTHTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E64C8CA91F5945A300B326E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E64C8CB11F5945A300B326E4 /* RTHTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RTHTest.xcdatamodel; sourceTree = "<group>"; };
@@ -131,6 +139,8 @@
 		E64C8CC01F594AE900B326E4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E60FDC831F5A8732001EB220 /* Price.swift */,
+				E60FDC851F5A8DE2001EB220 /* Response.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -138,6 +148,8 @@
 		E64C8CC11F594AFA00B326E4 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				E60FDC7F1F5A712F001EB220 /* Router.swift */,
+				E60FDC811F5A870F001EB220 /* APIHelper.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -279,7 +291,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RTHTest/Pods-RTHTest-frameworks.sh\"\n";
 		};
 		DAF59B8AF433FAB948AD417A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -318,12 +330,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E60FDC821F5A870F001EB220 /* APIHelper.swift in Sources */,
 				E60FDC761F595535001EB220 /* UIView.swift in Sources */,
 				E64C8CCA1F594C2200B326E4 /* MainViewController.swift in Sources */,
 				E60FDC791F596281001EB220 /* PriceTableViewCell.swift in Sources */,
 				E64C8CB21F5945A400B326E4 /* RTHTest.xcdatamodeld in Sources */,
 				E60FDC721F594FD6001EB220 /* Global.swift in Sources */,
+				E60FDC861F5A8DE2001EB220 /* Response.swift in Sources */,
+				E60FDC801F5A712F001EB220 /* Router.swift in Sources */,
 				E60FDC7E1F596780001EB220 /* Utils.swift in Sources */,
+				E60FDC841F5A8732001EB220 /* Price.swift in Sources */,
 				E60FDC6E1F594E07001EB220 /* SplashScreenViewController.swift in Sources */,
 				E64C8CAA1F5945A300B326E4 /* AppDelegate.swift in Sources */,
 				E60FDC741F5954CE001EB220 /* BaseViewController.swift in Sources */,

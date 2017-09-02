@@ -14,7 +14,10 @@ class MainViewController: BaseViewController {
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var weekdayLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var tableView: UITableView!
+
+    var prices: [Price] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +34,11 @@ class MainViewController: BaseViewController {
         let cellNib = UINib(nibName: PriceTableViewCell.kCellId, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: PriceTableViewCell.kCellId)
         tableView.tableFooterView = UIView()
-        tableView.separatorStyle = .none
-        tableView.backgroundColor = UIColor.white
-        tableView.showsVerticalScrollIndicator = false
+
+        containerView.shawdow(Global.colorMain)
+
+        //load data only once
+        loadPrices()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -49,6 +54,14 @@ class MainViewController: BaseViewController {
         Global.currentWorkFlow = WorkFlow.nothing.hashValue
     }
 
+    func loadPrices() {
+        APIHelper.getPrices() {
+            [weak self] (response, prices) in
+            self?.prices = prices ?? [Price]()
+            self?.tableView.reloadData()
+        }
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -61,12 +74,12 @@ extension MainViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return prices.count
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let cell = tableView.dequeueReusableCell(withIdentifier: PriceTableViewCell.kCellId) as! PriceTableViewCell  //swiftlint:disable:this force_cast
-        cell.bindingDate()
+        cell.bindingDate(prices[indexPath.row])
 
         let height = cell.bounds.height + 10
         return height
@@ -77,7 +90,7 @@ extension MainViewController: UITableViewDataSource {
         cell.layoutMargins = UIEdgeInsets.zero
         cell.preservesSuperviewLayoutMargins = false
         cell.separatorInset = UIEdgeInsets.zero
-        cell.bindingDate()
+        cell.bindingDate(prices[indexPath.row])
 
         return cell
     }

@@ -106,6 +106,29 @@ open class Utils {
         return result
     }
 
+    static func dateForShowing(string: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = NSTimeZone.system
+        dateFormatter.dateStyle = .full
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+
+        let date = dateFormatter.date(from: string)
+        if let newDate = date {
+            return getDateFormatterForShowing().string(from: newDate)
+
+        }
+        return ""
+    }
+
+    static private func getDateFormatterForShowing() -> DateFormatter {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = NSTimeZone.system
+        dateFormatter.dateStyle = .full
+        dateFormatter.dateFormat = "d MMMM yyyy"
+
+        return dateFormatter
+    }
+
     static private func getDateFormatter() -> DateFormatter {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = NSTimeZone.system

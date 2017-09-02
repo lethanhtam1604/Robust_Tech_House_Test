@@ -24,8 +24,19 @@ class PriceTableViewCell: UITableViewCell {
 
     }
 
-    func bindingDate() {
-        dateLabel.text = Utils.getCurrentDate()
-        priceLabel.text = "$100"
+    func bindingDate(_ price: Price) {
+        if let date = price.date {
+            dateLabel.text = Utils.dateForShowing(string: date)
+        }
+        else {
+            dateLabel.text = ""
+        }
+
+        if let amount = price.amount {
+            priceLabel.text = "$" + amount
+        }
+        else {
+            priceLabel.text = ""
+        }
     }
 }
