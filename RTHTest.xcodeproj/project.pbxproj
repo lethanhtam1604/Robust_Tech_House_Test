@@ -30,6 +30,8 @@
 		E64C8CC71F594B5F00B326E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E64C8CC61F594B5F00B326E4 /* Main.storyboard */; };
 		E64C8CCA1F594C2200B326E4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C8CC91F594C2200B326E4 /* MainViewController.swift */; };
 		E64C8CCC1F594CC900B326E4 /* MyriadPro.otf in Resources */ = {isa = PBXBuildFile; fileRef = E64C8CCB1F594CC900B326E4 /* MyriadPro.otf */; };
+		E64E8BCD1F5E599300824CB7 /* CubicCurveAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64E8BCC1F5E599300824CB7 /* CubicCurveAlgorithm.swift */; };
+		E64E8BCF1F5E5E6D00824CB7 /* BezierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64E8BCE1F5E5E6D00824CB7 /* BezierView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		E64C8CC61F594B5F00B326E4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E64C8CC91F594C2200B326E4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E64C8CCB1F594CC900B326E4 /* MyriadPro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyriadPro.otf; sourceTree = "<group>"; };
+		E64E8BCC1F5E599300824CB7 /* CubicCurveAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubicCurveAlgorithm.swift; sourceTree = "<group>"; };
+		E64E8BCE1F5E5E6D00824CB7 /* BezierView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				E63734161F5AA6A60007A80A /* DatabaseHelper.swift */,
+				E64E8BCC1F5E599300824CB7 /* CubicCurveAlgorithm.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				E60FDC771F596281001EB220 /* PriceTableViewCell.swift */,
+				E64E8BCE1F5E5E6D00824CB7 /* BezierView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -349,10 +355,12 @@
 				E63734171F5AA6A60007A80A /* DatabaseHelper.swift in Sources */,
 				E60FDC761F595535001EB220 /* UIView.swift in Sources */,
 				E64C8CCA1F594C2200B326E4 /* MainViewController.swift in Sources */,
+				E64E8BCF1F5E5E6D00824CB7 /* BezierView.swift in Sources */,
 				E60FDC791F596281001EB220 /* PriceTableViewCell.swift in Sources */,
 				E64C8CB21F5945A400B326E4 /* RTHTest.xcdatamodeld in Sources */,
 				E60FDC721F594FD6001EB220 /* Global.swift in Sources */,
 				E60FDC861F5A8DE2001EB220 /* Response.swift in Sources */,
+				E64E8BCD1F5E599300824CB7 /* CubicCurveAlgorithm.swift in Sources */,
 				E60FDC801F5A712F001EB220 /* Router.swift in Sources */,
 				E60FDC7E1F596780001EB220 /* Utils.swift in Sources */,
 				E60FDC841F5A8732001EB220 /* Price.swift in Sources */,

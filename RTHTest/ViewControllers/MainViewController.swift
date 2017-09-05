@@ -15,6 +15,7 @@ class MainViewController: BaseViewController {
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var weekdayLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var chartView: BezierView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
@@ -28,6 +29,23 @@ class MainViewController: BaseViewController {
     }()
 
     var prices: [Price] = []
+
+    var graphPoints: [CGPoint] {
+        let k = Int(chartView.frame.width) / (prices.count-1)
+        var result = [CGPoint]()
+        var max = 0.0
+        for price in prices {
+            if(Double(price.amount ?? "0")! > max) {
+                max = Double(price.amount ?? "0")!
+            }
+        }
+        let delta = Double(chartView.frame.height) / max
+        for i in 0..<prices.count {
+            result.append(CGPoint(x: Double(i*k), y: Double(chartView.frame.height) - Double(prices[i].amount ?? "0")!*delta))
+        }
+
+        return result
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,6 +105,8 @@ class MainViewController: BaseViewController {
                 self?.tableView.reloadData()
                 self?.refreshControl.endRefreshing()
                 self?.indicator.stopAnimating()
+                self?.chartView.dataSource = self
+                self?.chartView.layoutSubviews()
             }
         }
         else {
@@ -94,6 +114,8 @@ class MainViewController: BaseViewController {
             self.tableView.reloadData()
             self.refreshControl.endRefreshing()
             self.indicator.stopAnimating()
+            self.chartView.dataSource = self
+            self.chartView.layoutSubviews()
 
             TSMessage.showNotification(withTitle: "Network error", subtitle: "Couldn't connect to the server. Check your network connection.", type: .error)
         }
@@ -137,6 +159,13 @@ extension MainViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        chartView.fadeColorAtPoint(indexPath.row)
+    }
+}
 
+extension MainViewController: BezierViewDataSource {
+
+    func bezierViewDataPoints(bezierView: BezierView) -> [CGPoint] {
+        return graphPoints
     }
 }
