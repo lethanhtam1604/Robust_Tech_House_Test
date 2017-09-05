@@ -21,6 +21,9 @@ open class CubicCurveAlgorithm {
 
     func controlPointsFromPoints(dataPoints: [CGPoint]) -> [CubicCurveSegment] {
 
+        firstControlPoints.removeAll()
+        secondControlPoints.removeAll()
+        
         //Number of Segments
         let count = dataPoints.count - 1
 
@@ -43,11 +46,9 @@ open class CubicCurveAlgorithm {
             let P2y = (2*P1y - P0.y)
 
             secondControlPoints.append(CGPoint(x: P2x, y: P2y))
-        } else {
-
-
+        }
+        else {
             firstControlPoints = Array(repeating: nil, count: count)
-
 
             var rhsArray = [CGPoint]()
 
@@ -147,8 +148,8 @@ open class CubicCurveAlgorithm {
                     let controlPointY = (P3.y + P1.y)/2
 
                     secondControlPoints.append(CGPoint(x: controlPointX, y: controlPointY))
-
-                } else {
+                }
+                else {
                     let P3 = dataPoints[i+1]
 
                     guard let nextP1 = firstControlPoints[i+1] else {

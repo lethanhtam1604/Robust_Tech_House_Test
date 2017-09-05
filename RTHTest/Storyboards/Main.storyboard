@@ -91,17 +91,17 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWu-kX-sRW" userLabel="TableView">
-                                <rect key="frame" x="0.0" y="265" width="375" height="402"/>
+                                <rect key="frame" x="0.0" y="250" width="375" height="417"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKJ-nq-xMq" userLabel="ContainerView">
-                                        <rect key="frame" x="25" y="10" width="325" height="392"/>
+                                        <rect key="frame" x="25" y="10" width="325" height="407"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bs2-bI-geB">
-                                                <rect key="frame" x="0.0" y="0.0" width="325" height="392"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="325" height="407"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </tableView>
                                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="UZS-ZC-m1X">
-                                                <rect key="frame" x="152" y="186" width="20" height="20"/>
+                                                <rect key="frame" x="152" y="193.5" width="20" height="20"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" red="0.058823529409999999" green="0.52156862749999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="color" red="0.058823529409999999" green="0.52156862749999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -130,7 +130,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="VWu-kX-sRW" firstAttribute="leading" secondItem="aM5-6P-E9O" secondAttribute="leading" id="0WZ-6H-78J"/>
-                            <constraint firstItem="VWu-kX-sRW" firstAttribute="top" secondItem="ux5-1n-vtN" secondAttribute="bottom" constant="15" id="3FA-ah-rcv"/>
+                            <constraint firstItem="VWu-kX-sRW" firstAttribute="top" secondItem="ux5-1n-vtN" secondAttribute="bottom" id="3FA-ah-rcv"/>
                             <constraint firstItem="ux5-1n-vtN" firstAttribute="top" secondItem="HHI-76-vw6" secondAttribute="bottom" id="4ZT-gR-ME7"/>
                             <constraint firstAttribute="trailing" secondItem="HHI-76-vw6" secondAttribute="trailing" id="5zH-Ij-1Vb"/>
                             <constraint firstItem="ux5-1n-vtN" firstAttribute="leading" secondItem="aM5-6P-E9O" secondAttribute="leading" constant="30" id="He4-QB-a3r"/>
@@ -145,7 +145,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="RTH Gold Price" id="uE6-1z-NK2">
-                        <barButtonItem key="leftBarButtonItem" image="info_icon" id="dzf-S7-5hb"/>
+                        <barButtonItem key="leftBarButtonItem" image="info_icon" id="dzf-S7-5hb">
+                            <connections>
+                                <action selector="actionTapToInfoButton:" destination="3Bb-Ol-iZ8" id="dpr-ps-4KO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="chartView" destination="ux5-1n-vtN" id="MtJ-jI-fov"/>
@@ -160,6 +164,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4mr-kQ-81C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1136.8" y="64.31784107946028"/>
+        </scene>
+        <!--Popup Dialog View Controller-->
+        <scene sceneID="HZ5-B0-LKY">
+            <objects>
+                <viewController storyboardIdentifier="PopupDialogViewController" id="NdC-99-Iqb" customClass="PopupDialogViewController" customModule="RTHTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="i7O-L6-EMF"/>
+                        <viewControllerLayoutGuide type="bottom" id="YQc-ih-Z1K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5O4-rB-QdO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xk3-9I-2wr" customClass="BasePopupView" customModule="RTHTest" customModuleProvider="target">
+                                <rect key="frame" x="57" y="218" width="260" height="230"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="DGP-RC-Y7v"/>
+                                    <constraint firstAttribute="height" constant="230" id="qGf-NR-JVc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xk3-9I-2wr" firstAttribute="centerX" secondItem="5O4-rB-QdO" secondAttribute="centerX" id="cA7-16-myn"/>
+                            <constraint firstItem="Xk3-9I-2wr" firstAttribute="centerY" secondItem="5O4-rB-QdO" secondAttribute="centerY" id="ciV-2w-JBZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="infoPopupView" destination="Xk3-9I-2wr" id="NMJ-96-cFC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Na-VV-1LK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1930.4000000000001" y="64.31784107946028"/>
         </scene>
     </scenes>
     <resources>

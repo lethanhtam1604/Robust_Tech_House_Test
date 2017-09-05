@@ -32,6 +32,10 @@
 		E64C8CCC1F594CC900B326E4 /* MyriadPro.otf in Resources */ = {isa = PBXBuildFile; fileRef = E64C8CCB1F594CC900B326E4 /* MyriadPro.otf */; };
 		E64E8BCD1F5E599300824CB7 /* CubicCurveAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64E8BCC1F5E599300824CB7 /* CubicCurveAlgorithm.swift */; };
 		E64E8BCF1F5E5E6D00824CB7 /* BezierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64E8BCE1F5E5E6D00824CB7 /* BezierView.swift */; };
+		E64E8BD11F5EF46D00824CB7 /* BasePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64E8BD01F5EF46D00824CB7 /* BasePopupView.swift */; };
+		E64E8BD31F5EF48400824CB7 /* BasePopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E64E8BD21F5EF48400824CB7 /* BasePopupView.xib */; };
+		E64E8BD51F5EF68C00824CB7 /* MyAvatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E64E8BD41F5EF68C00824CB7 /* MyAvatar.jpg */; };
+		E64E8BD71F5F026D00824CB7 /* PopupDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64E8BD61F5F026D00824CB7 /* PopupDialogViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +68,10 @@
 		E64C8CCB1F594CC900B326E4 /* MyriadPro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyriadPro.otf; sourceTree = "<group>"; };
 		E64E8BCC1F5E599300824CB7 /* CubicCurveAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubicCurveAlgorithm.swift; sourceTree = "<group>"; };
 		E64E8BCE1F5E5E6D00824CB7 /* BezierView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierView.swift; sourceTree = "<group>"; };
+		E64E8BD01F5EF46D00824CB7 /* BasePopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePopupView.swift; sourceTree = "<group>"; };
+		E64E8BD21F5EF48400824CB7 /* BasePopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasePopupView.xib; sourceTree = "<group>"; };
+		E64E8BD41F5EF68C00824CB7 /* MyAvatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MyAvatar.jpg; sourceTree = "<group>"; };
+		E64E8BD61F5F026D00824CB7 /* PopupDialogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +195,7 @@
 				E60FDC731F5954CE001EB220 /* BaseViewController.swift */,
 				E64C8CC91F594C2200B326E4 /* MainViewController.swift */,
 				E60FDC6D1F594E07001EB220 /* SplashScreenViewController.swift */,
+				E64E8BD61F5F026D00824CB7 /* PopupDialogViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -196,6 +205,7 @@
 			children = (
 				E60FDC771F596281001EB220 /* PriceTableViewCell.swift */,
 				E64E8BCE1F5E5E6D00824CB7 /* BezierView.swift */,
+				E64E8BD01F5EF46D00824CB7 /* BasePopupView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				E60FDC7B1F59628D001EB220 /* PriceTableViewCell.xib */,
+				E64E8BD21F5EF48400824CB7 /* BasePopupView.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -211,6 +222,7 @@
 		E64C8CC81F594BC000B326E4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E64E8BD41F5EF68C00824CB7 /* MyAvatar.jpg */,
 				E63EA08A1F5DC78300BAFA98 /* TSMessagesDefaultDesign.json */,
 				E64C8CCB1F594CC900B326E4 /* MyriadPro.otf */,
 			);
@@ -289,8 +301,10 @@
 			files = (
 				E64C8CB71F5945A400B326E4 /* LaunchScreen.storyboard in Resources */,
 				E63EA08B1F5DC78300BAFA98 /* TSMessagesDefaultDesign.json in Resources */,
+				E64E8BD51F5EF68C00824CB7 /* MyAvatar.jpg in Resources */,
 				E64C8CB41F5945A400B326E4 /* Assets.xcassets in Resources */,
 				E64C8CC71F594B5F00B326E4 /* Main.storyboard in Resources */,
+				E64E8BD31F5EF48400824CB7 /* BasePopupView.xib in Resources */,
 				E60FDC7C1F59628D001EB220 /* PriceTableViewCell.xib in Resources */,
 				E60FDC6C1F594DE7001EB220 /* SplashScreen.storyboard in Resources */,
 				E64C8CCC1F594CC900B326E4 /* MyriadPro.otf in Resources */,
@@ -353,6 +367,7 @@
 			files = (
 				E60FDC821F5A870F001EB220 /* APIHelper.swift in Sources */,
 				E63734171F5AA6A60007A80A /* DatabaseHelper.swift in Sources */,
+				E64E8BD11F5EF46D00824CB7 /* BasePopupView.swift in Sources */,
 				E60FDC761F595535001EB220 /* UIView.swift in Sources */,
 				E64C8CCA1F594C2200B326E4 /* MainViewController.swift in Sources */,
 				E64E8BCF1F5E5E6D00824CB7 /* BezierView.swift in Sources */,
@@ -365,6 +380,7 @@
 				E60FDC7E1F596780001EB220 /* Utils.swift in Sources */,
 				E60FDC841F5A8732001EB220 /* Price.swift in Sources */,
 				E60FDC6E1F594E07001EB220 /* SplashScreenViewController.swift in Sources */,
+				E64E8BD71F5F026D00824CB7 /* PopupDialogViewController.swift in Sources */,
 				E64C8CAA1F5945A300B326E4 /* AppDelegate.swift in Sources */,
 				E60FDC741F5954CE001EB220 /* BaseViewController.swift in Sources */,
 				E60FDC701F594FC3001EB220 /* UIColor.swift in Sources */,

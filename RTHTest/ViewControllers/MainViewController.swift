@@ -93,20 +93,18 @@ class MainViewController: BaseViewController {
     func loadPrices() {
         if Utils.isInternetAvailable() {
             APIHelper.getPrices() {
-                [weak self] (response, prices) in
-                self?.prices = prices ?? [Price]()
+                [unowned self] (response, prices) in
+                self.prices.removeAll()
+                self.prices.append(contentsOf: prices ?? [Price]())
 
-                if let priceList = self?.prices {
-                    for price in priceList {
-                        DatabaseHelper.getInstance().savePrice(price)
-                    }
+                for i in 0..<self.prices.count {
+                    DatabaseHelper.getInstance().savePrice(self.prices[i])
                 }
 
-                self?.tableView.reloadData()
-                self?.refreshControl.endRefreshing()
-                self?.indicator.stopAnimating()
-                self?.chartView.dataSource = self
-                self?.chartView.layoutSubviews()
+                self.tableView.reloadData()
+                self.refreshControl.endRefreshing()
+                self.indicator.stopAnimating()
+                self.chartView.drawChart(self.graphPoints)
             }
         }
         else {
@@ -114,10 +112,17 @@ class MainViewController: BaseViewController {
             self.tableView.reloadData()
             self.refreshControl.endRefreshing()
             self.indicator.stopAnimating()
-            self.chartView.dataSource = self
-            self.chartView.layoutSubviews()
+            self.chartView.drawChart(self.graphPoints)
 
             TSMessage.showNotification(withTitle: "Network error", subtitle: "Couldn't connect to the server. Check your network connection.", type: .error)
+        }
+    }
+    
+    @IBAction func actionTapToInfoButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let viewController = storyboard.instantiateViewController(withIdentifier: "PopupDialogViewController") as? PopupDialogViewController {
+            viewController.modalPresentationStyle = .overCurrentContext
+            present(viewController, animated: false, completion: nil)
         }
     }
 
@@ -160,12 +165,5 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         chartView.fadeColorAtPoint(indexPath.row)
-    }
-}
-
-extension MainViewController: BezierViewDataSource {
-
-    func bezierViewDataPoints(bezierView: BezierView) -> [CGPoint] {
-        return graphPoints
     }
 }

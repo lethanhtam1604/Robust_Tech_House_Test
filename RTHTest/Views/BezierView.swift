@@ -8,17 +8,11 @@
 
 import UIKit
 
-protocol BezierViewDataSource: class {
-    func bezierViewDataPoints(bezierView: BezierView) -> [CGPoint]
-}
-
 class BezierView: UIView {
 
     fileprivate let kStrokeAnimationKey = "StrokeAnimationKey"
     fileprivate let kFadeAnimationKey = "FadeAnimationKey"
     fileprivate let kColorAnimationKey = "fillColor"
-
-    weak var dataSource: BezierViewDataSource?
 
     var lineColor = Global.colorMain
     var animates = true
@@ -26,14 +20,17 @@ class BezierView: UIView {
     var lineLayer = CAShapeLayer()
 
 
-    private var dataPoints: [CGPoint]? {
-        return self.dataSource?.bezierViewDataPoints(bezierView: self)
-    }
-
+    var dataPoints: [CGPoint]? = []
     private let cubicCurveAlgorithm = CubicCurveAlgorithm()
 
     override func layoutSubviews() {
         super.layoutSubviews()
+
+    }
+
+    func drawChart(_ dataPoints: [CGPoint]) {
+
+        self.dataPoints = dataPoints
 
         self.layer.sublayers?.forEach({ (layer: CALayer) -> () in
             layer.removeFromSuperlayer()
