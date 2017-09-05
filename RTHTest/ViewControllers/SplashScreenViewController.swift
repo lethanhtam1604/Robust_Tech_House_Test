@@ -21,6 +21,7 @@ class SplashScreenViewController: BaseViewController {
         titleLabel.textColor = Global.colorMain
         titleLabel.increaseSize()
 
+        Global.currentWorkFlow = WorkFlow.mainScreen.hashValue
         navigateToMainPage()
     }
 

@@ -7,6 +7,7 @@ def shared_pods
     pod 'Alamofire'
     pod 'ObjectMapper'
     pod 'AlamofireObjectMapper'
+    pod 'TSMessages'
 end
 
 target 'RTHTest' do

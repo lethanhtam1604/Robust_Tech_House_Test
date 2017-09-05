@@ -11,6 +11,7 @@ import ObjectMapper
 
 class Price: Mappable {
 
+    var id: String?
     var amount: String?
     var date: String?
 

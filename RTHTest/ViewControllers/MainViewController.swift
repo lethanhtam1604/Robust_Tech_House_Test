@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TSMessages
 
 //swiftlint:disable line_length
 class MainViewController: BaseViewController {
@@ -16,6 +17,15 @@ class MainViewController: BaseViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(handleRefresh), for: UIControlEvents.valueChanged)
+        refreshControl.tintColor = Global.colorMain
+
+        return refreshControl
+    }()
 
     var prices: [Price] = []
 
@@ -34,31 +44,58 @@ class MainViewController: BaseViewController {
         let cellNib = UINib(nibName: PriceTableViewCell.kCellId, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: PriceTableViewCell.kCellId)
         tableView.tableFooterView = UIView()
+        tableView.addSubview(refreshControl)
 
         containerView.shawdow(Global.colorMain)
+    }
 
-        //load data only once
+    func handleRefresh(_ refreshControl: UIRefreshControl) {
         loadPrices()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        if Global.currentWorkFlow == WorkFlow.splashScreen.hashValue {
+        switch Global.currentWorkFlow {
+        case WorkFlow.splashScreen.hashValue:
             let storyboard = UIStoryboard(name: "SplashScreen", bundle: nil)
             if let viewController = storyboard.instantiateViewController(withIdentifier: "SplashScreenViewController") as? SplashScreenViewController {
                 navigationController?.pushViewController(viewController, animated: false)
             }
+        case WorkFlow.mainScreen.hashValue:
+            indicator.startAnimating()
+            loadPrices()
+        default:
+            break
         }
 
         Global.currentWorkFlow = WorkFlow.nothing.hashValue
     }
 
     func loadPrices() {
-        APIHelper.getPrices() {
-            [weak self] (response, prices) in
-            self?.prices = prices ?? [Price]()
-            self?.tableView.reloadData()
+        if Utils.isInternetAvailable() {
+            APIHelper.getPrices() {
+                [weak self] (response, prices) in
+                self?.prices = prices ?? [Price]()
+
+                if let priceList = self?.prices {
+                    for price in priceList {
+                        DatabaseHelper.getInstance().savePrice(price)
+                    }
+                }
+
+                self?.tableView.reloadData()
+                self?.refreshControl.endRefreshing()
+                self?.indicator.stopAnimating()
+            }
+        }
+        else {
+            self.prices = DatabaseHelper.getInstance().getPrices() ?? [Price]()
+            self.tableView.reloadData()
+            self.refreshControl.endRefreshing()
+            self.indicator.stopAnimating()
+
+            TSMessage.showNotification(withTitle: "Network error", subtitle: "Couldn't connect to the server. Check your network connection.", type: .error)
         }
     }
 

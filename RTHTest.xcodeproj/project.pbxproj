@@ -21,6 +21,8 @@
 		E60FDC821F5A870F001EB220 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDC811F5A870F001EB220 /* APIHelper.swift */; };
 		E60FDC841F5A8732001EB220 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDC831F5A8732001EB220 /* Price.swift */; };
 		E60FDC861F5A8DE2001EB220 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDC851F5A8DE2001EB220 /* Response.swift */; };
+		E63734171F5AA6A60007A80A /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63734161F5AA6A60007A80A /* DatabaseHelper.swift */; };
+		E63EA08B1F5DC78300BAFA98 /* TSMessagesDefaultDesign.json in Resources */ = {isa = PBXBuildFile; fileRef = E63EA08A1F5DC78300BAFA98 /* TSMessagesDefaultDesign.json */; };
 		E64C8CAA1F5945A300B326E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C8CA91F5945A300B326E4 /* AppDelegate.swift */; };
 		E64C8CB21F5945A400B326E4 /* RTHTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E64C8CB01F5945A300B326E4 /* RTHTest.xcdatamodeld */; };
 		E64C8CB41F5945A400B326E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E64C8CB31F5945A400B326E4 /* Assets.xcassets */; };
@@ -47,6 +49,8 @@
 		E60FDC811F5A870F001EB220 /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		E60FDC831F5A8732001EB220 /* Price.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		E60FDC851F5A8DE2001EB220 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		E63734161F5AA6A60007A80A /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
+		E63EA08A1F5DC78300BAFA98 /* TSMessagesDefaultDesign.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TSMessagesDefaultDesign.json; sourceTree = "<group>"; };
 		E64C8CA61F5945A300B326E4 /* RTHTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTHTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E64C8CA91F5945A300B326E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E64C8CB11F5945A300B326E4 /* RTHTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RTHTest.xcdatamodel; sourceTree = "<group>"; };
@@ -79,6 +83,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E63734151F5AA6970007A80A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E63734161F5AA6A60007A80A /* DatabaseHelper.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		E64C8C9D1F5945A300B326E4 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +115,7 @@
 				E64C8CBE1F594AA700B326E4 /* Extensions */,
 				E64C8CBF1F594ADD00B326E4 /* Global */,
 				E64C8CC01F594AE900B326E4 /* Models */,
+				E63734151F5AA6970007A80A /* Managers */,
 				E64C8CC11F594AFA00B326E4 /* Network */,
 				E64C8CC21F594B0B00B326E4 /* Storyboards */,
 				E64C8CC31F594B2900B326E4 /* ViewControllers */,
@@ -192,6 +205,7 @@
 		E64C8CC81F594BC000B326E4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E63EA08A1F5DC78300BAFA98 /* TSMessagesDefaultDesign.json */,
 				E64C8CCB1F594CC900B326E4 /* MyriadPro.otf */,
 			);
 			path = Resources;
@@ -268,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E64C8CB71F5945A400B326E4 /* LaunchScreen.storyboard in Resources */,
+				E63EA08B1F5DC78300BAFA98 /* TSMessagesDefaultDesign.json in Resources */,
 				E64C8CB41F5945A400B326E4 /* Assets.xcassets in Resources */,
 				E64C8CC71F594B5F00B326E4 /* Main.storyboard in Resources */,
 				E60FDC7C1F59628D001EB220 /* PriceTableViewCell.xib in Resources */,
@@ -331,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E60FDC821F5A870F001EB220 /* APIHelper.swift in Sources */,
+				E63734171F5AA6A60007A80A /* DatabaseHelper.swift in Sources */,
 				E60FDC761F595535001EB220 /* UIView.swift in Sources */,
 				E64C8CCA1F594C2200B326E4 /* MainViewController.swift in Sources */,
 				E60FDC791F596281001EB220 /* PriceTableViewCell.swift in Sources */,

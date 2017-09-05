@@ -94,12 +94,20 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="325" height="422"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </tableView>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="UZS-ZC-m1X">
+                                                <rect key="frame" x="152" y="201" width="20" height="20"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" red="0.058823529409999999" green="0.52156862749999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="color" red="0.058823529409999999" green="0.52156862749999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="bs2-bI-geB" secondAttribute="trailing" id="Adg-Ig-Hc9"/>
                                             <constraint firstAttribute="bottom" secondItem="bs2-bI-geB" secondAttribute="bottom" id="D0U-TA-zC1"/>
+                                            <constraint firstItem="UZS-ZC-m1X" firstAttribute="centerX" secondItem="oKJ-nq-xMq" secondAttribute="centerX" id="XTd-sq-E04"/>
                                             <constraint firstItem="bs2-bI-geB" firstAttribute="top" secondItem="oKJ-nq-xMq" secondAttribute="top" id="a6B-yU-zwb"/>
+                                            <constraint firstItem="UZS-ZC-m1X" firstAttribute="centerY" secondItem="oKJ-nq-xMq" secondAttribute="centerY" id="tPS-7n-pab"/>
                                             <constraint firstItem="bs2-bI-geB" firstAttribute="leading" secondItem="oKJ-nq-xMq" secondAttribute="leading" id="zwe-1d-RgN"/>
                                         </constraints>
                                     </view>
@@ -137,6 +145,7 @@
                         <outlet property="containerView" destination="oKJ-nq-xMq" id="y7w-dj-AEf"/>
                         <outlet property="dateLabel" destination="Efc-sp-ymP" id="oTE-Qp-hMV"/>
                         <outlet property="dayLabel" destination="WhZ-2W-IbX" id="A54-tW-d52"/>
+                        <outlet property="indicator" destination="UZS-ZC-m1X" id="zt1-hI-74r"/>
                         <outlet property="tableView" destination="bs2-bI-geB" id="NS2-eN-OSj"/>
                         <outlet property="weekdayLabel" destination="GZI-0D-ynI" id="nJn-07-AMT"/>
                     </connections>
