@@ -36,7 +36,7 @@ class DatabaseHelper: NSObject {
 
             let context = appDelegate.persistentContainer.viewContext
 
-            let entity =  NSEntityDescription.entity(forEntityName: "PriceModel", in: context)
+            let entity = NSEntityDescription.entity(forEntityName: "PriceModel", in: context)
 
             let fetchRequest: NSFetchRequest<PriceModel> = PriceModel.fetchRequest()
             let searchResults = try context.fetch(fetchRequest)
@@ -53,19 +53,21 @@ class DatabaseHelper: NSObject {
                 }
             }
 
-            if !isUpdate {
-                transc = NSManagedObject(entity: entity!, insertInto: context)
+            if !isUpdate && entity != nil {
+                transc = NSManagedObject(entity: entity!, insertInto: context) //swiftlint:disable:this force_unwrapping
             }
 
-            //set the entity values
-            transc.setValue(price.date, forKey: "id")
-            transc.setValue(price.date, forKey: "date")
-            transc.setValue(price.amount, forKey: "amount")
+            if transc != nil {
+                //set the entity values
+                transc.setValue(price.date, forKey: "id")
+                transc.setValue(price.date, forKey: "date")
+                transc.setValue(price.amount, forKey: "amount")
 
-            //save the object
-            try context.save()
-            print("saved!")
-        } catch let error as NSError  {
+                //save the object
+                try context.save()
+                print("saved!")
+            }
+        } catch let error as NSError {
             print("Could not save \(error), \(error.userInfo)")
         } catch {
 
@@ -96,11 +98,9 @@ class DatabaseHelper: NSObject {
                 prices.append(price)
             }
             return prices
-            
         } catch {
             print("Error with request: \(error)")
         }
-        
         return nil
     }
 }

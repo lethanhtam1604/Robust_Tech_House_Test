@@ -23,7 +23,7 @@ open class Utils {
         }
 
         var flags = SCNetworkReachabilityFlags()
-        if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
+        if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) { //swiftlint:disable:this force_unwrapping
             return false
         }
         let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0

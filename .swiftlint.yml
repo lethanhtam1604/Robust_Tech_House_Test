@@ -1,0 +1,36 @@
+included:
+  - RTHTest
+excluded:
+  - Pods
+disabled_rules:
+  - void_return
+  - cyclomatic_complexity
+  - type_body_length
+  - function_body_length
+  - file_length
+  - line_length
+  - identifier_name 
+opt_in_rules:
+  - closure_spacing # クロージャ内の式に1つのスペースを置く
+  - conditional_returns_on_newline # ワンライナーのif文を許容しない
+  - empty_count # zero-lengthはisEmptyを使用する
+  - force_unwrapping # アンラップを許容しない
+  - operator_usage_whitespace # 演算記号の前後に1つのスペースを置く
+  - overridden_super_call # Overrideしたメソッドはsuperを呼ぶ
+  - private_outlet # @IBOutletはprivate修飾子を付与する
+  - redundant_nil_coalescing # 左辺がnilを許容している場合、明示的にnilを代入しない
+  - switch_case_on_newline # switchのcaseは改行する
+
+identifier_name:
+  excluded:
+    - id
+line_length: 200
+large_tuple: 3
+
+custom_rules:
+  rule_id:
+    included: Source/SwiftLintFramework/Rules/\w+\.swift
+    name: Rule ID
+    message: Rule IDs must be all lowercase, snake case and not end with `rule`
+    regex: identifier:\s*("\w+_rule"|"\S*[^a-z_]\S*")
+    severity: error

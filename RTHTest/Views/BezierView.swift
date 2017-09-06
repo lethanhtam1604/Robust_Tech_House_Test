@@ -19,7 +19,6 @@ class BezierView: UIView {
     var pointLayers = [CAShapeLayer]()
     var lineLayer = CAShapeLayer()
 
-
     var dataPoints: [CGPoint]? = []
     private let cubicCurveAlgorithm = CubicCurveAlgorithm()
 
@@ -44,7 +43,7 @@ class BezierView: UIView {
         animateLayers()
     }
 
-    private func drawPoints(){
+    private func drawPoints() {
 
         guard let points = dataPoints else {
             return
@@ -85,17 +84,15 @@ class BezierView: UIView {
 
         let controlPoints = cubicCurveAlgorithm.controlPointsFromPoints(dataPoints: points)
 
-
         let linePath = UIBezierPath()
 
         for i in 0..<points.count {
+            let point = points[i]
 
-            let point = points[i];
-
-            if i==0 {
+            if i == 0 {
                 linePath.move(to: point)
             } else {
-                let segment = controlPoints[i-1]
+                let segment = controlPoints[i - 1]
                 linePath.addCurve(to: point, controlPoint1: segment.controlPoint1, controlPoint2: segment.controlPoint2)
             }
         }

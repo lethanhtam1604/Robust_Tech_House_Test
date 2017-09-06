@@ -10,21 +10,19 @@ import UIKit
 
 class PopupDialogViewController: BaseViewController {
 
-    @IBOutlet weak var infoPopupView: BasePopupView!
+    @IBOutlet fileprivate weak var infoPopupView: BasePopupView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        infoPopupView.closeBtn.addTarget(self, action: #selector(actionTapToCloseButton), for: .touchUpInside)
-
         infoPopupView.isHidden = true
+        infoPopupView.delegate = self
 
         view.layer.backgroundColor = UIColor.black.withAlphaComponent(0.6).cgColor
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
 
         infoPopupView.isHidden = false
         infoPopupView.increaseSize()
@@ -33,8 +31,11 @@ class PopupDialogViewController: BaseViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+}
 
-    func actionTapToCloseButton() {
+extension PopupDialogViewController: BasePopupViewDelegate {
+
+    func actionTapTocloseButton() {
         dismiss(animated: false, completion: nil)
     }
 }

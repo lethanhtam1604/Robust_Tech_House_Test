@@ -8,36 +8,45 @@
 
 import UIKit
 
+protocol BasePopupViewDelegate: class {
+    func actionTapTocloseButton()
+}
+
 class BasePopupView: UIView {
 
-    @IBOutlet var contentView: BasePopupView!
-    @IBOutlet weak var avatarImgView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var closeBtn: UIButton!
+    @IBOutlet fileprivate var contentView: BasePopupView!
+    @IBOutlet fileprivate weak var avatarImgView: UIImageView!
+    @IBOutlet fileprivate weak var nameLabel: UILabel!
+    @IBOutlet fileprivate weak var emailLabel: UILabel!
+    @IBOutlet fileprivate weak var closeBtn: UIButton!
+
+    weak var delegate: BasePopupViewDelegate?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
         commoninit()
     }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-
-        commoninit()
-    }
 
     private func commoninit() {
-        //we're going to do stuff here
-
         Bundle.main.loadNibNamed("BasePopupView", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
 
         avatarImgView.layer.cornerRadius = 40
-
         contentView.layer.cornerRadius = 5
+
+        closeBtn.addTarget(self, action: #selector(actionTapTocloseButton), for: .touchUpInside)
+    }
+
+    func actionTapTocloseButton() {
+        delegate?.actionTapTocloseButton()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+
+        commoninit()
     }
 }

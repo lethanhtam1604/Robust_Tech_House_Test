@@ -6,19 +6,18 @@
 //  Copyright © 2017 Tam. All rights reserved.
 //
 
-import UIKit
 import TSMessages
+import UIKit
 
-//swiftlint:disable line_length
 class MainViewController: BaseViewController {
 
-    @IBOutlet weak var dayLabel: UILabel!
-    @IBOutlet weak var weekdayLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var chartView: BezierView!
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet fileprivate weak var dayLabel: UILabel!
+    @IBOutlet fileprivate weak var weekdayLabel: UILabel!
+    @IBOutlet fileprivate weak var dateLabel: UILabel!
+    @IBOutlet fileprivate weak var chartView: BezierView!
+    @IBOutlet fileprivate weak var containerView: UIView!
+    @IBOutlet fileprivate weak var tableView: UITableView!
+    @IBOutlet fileprivate weak var indicator: UIActivityIndicatorView!
 
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -31,17 +30,18 @@ class MainViewController: BaseViewController {
     var prices: [Price] = []
 
     var graphPoints: [CGPoint] {
-        let k = Int(chartView.frame.width) / (prices.count-1)
+        let k = Int(chartView.frame.width) / (prices.count - 1)
         var result = [CGPoint]()
         var max = 0.0
         for price in prices {
-            if(Double(price.amount ?? "0")! > max) {
-                max = Double(price.amount ?? "0")!
+            if Double(price.amount ?? "0") ?? 0 > max {
+                max = Double(price.amount ?? "0") ?? 0
             }
         }
         let delta = Double(chartView.frame.height) / max
         for i in 0..<prices.count {
-            result.append(CGPoint(x: Double(i*k), y: Double(chartView.frame.height) - Double(prices[i].amount ?? "0")!*delta))
+
+            result.append(CGPoint(x: Double(i * k), y: Double(chartView.frame.height) - (Double(prices[i].amount ?? "0") ?? 0) * delta))
         }
 
         return result
@@ -92,8 +92,7 @@ class MainViewController: BaseViewController {
 
     func loadPrices() {
         if Utils.isInternetAvailable() {
-            APIHelper.getPrices() {
-                [unowned self] (response, prices) in
+            APIHelper.getPrices { [unowned self] (_, prices) in
                 self.prices.removeAll()
                 self.prices.append(contentsOf: prices ?? [Price]())
 
@@ -106,8 +105,7 @@ class MainViewController: BaseViewController {
                 self.indicator.stopAnimating()
                 self.chartView.drawChart(self.graphPoints)
             }
-        }
-        else {
+        } else {
             self.prices = DatabaseHelper.getInstance().getPrices() ?? [Price]()
             self.tableView.reloadData()
             self.refreshControl.endRefreshing()
@@ -117,17 +115,17 @@ class MainViewController: BaseViewController {
             TSMessage.showNotification(withTitle: "Network error", subtitle: "Couldn't connect to the server. Check your network connection.", type: .error)
         }
     }
-    
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+
     @IBAction func actionTapToInfoButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let viewController = storyboard.instantiateViewController(withIdentifier: "PopupDialogViewController") as? PopupDialogViewController {
             viewController.modalPresentationStyle = .overCurrentContext
             present(viewController, animated: false, completion: nil)
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 }
 

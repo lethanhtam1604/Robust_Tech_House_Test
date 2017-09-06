@@ -27,18 +27,17 @@ enum Router: URLRequestConvertible {
 
     var path: String {
         switch self {
-        case .getPrices():
+        case .getPrices:
             return "/prices/chart_data"
         }
     }
 
     var contentType: String {
         switch self {
-        case .getPrices():
+        case .getPrices:
             return "application/json"
         }
     }
-
 
     func asURLRequest() throws -> URLRequest {
         let url = try Router.baseURLString.asURL()
@@ -49,7 +48,7 @@ enum Router: URLRequestConvertible {
         urlRequest.setValue(contentType, forHTTPHeaderField: "Content-Type")
 
         switch self {
-        case .getPrices(_):
+        case .getPrices:
             urlRequest = try URLEncoding.default.encode(urlRequest, with: [:])
             return urlRequest
         }

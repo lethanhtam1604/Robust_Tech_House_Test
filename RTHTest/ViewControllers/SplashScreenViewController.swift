@@ -10,7 +10,7 @@ import UIKit
 
 class SplashScreenViewController: BaseViewController {
 
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet fileprivate weak var titleLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
