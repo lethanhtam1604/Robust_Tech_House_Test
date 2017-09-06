@@ -17,12 +17,21 @@ class PopupDialogViewController: BaseViewController {
 
         infoPopupView.closeBtn.addTarget(self, action: #selector(actionTapToCloseButton), for: .touchUpInside)
 
-        view.layer.backgroundColor = UIColor.black.withAlphaComponent(0.5).cgColor
+        infoPopupView.isHidden = true
+
+        view.layer.backgroundColor = UIColor.black.withAlphaComponent(0.6).cgColor
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+
+        infoPopupView.isHidden = false
+        infoPopupView.increaseSize()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-
     }
 
     func actionTapToCloseButton() {
